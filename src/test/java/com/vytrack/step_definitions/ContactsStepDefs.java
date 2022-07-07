@@ -92,10 +92,10 @@ public class ContactsStepDefs {
         String query= "select concat(first_name,' ',last_name) \"full_name\", e.email \n" +
                 "from orocrm_contact c inner join orocrm_contact_email e \n" +
                 "on c.id = e.owner_id \n" +
-                "where e.email = 'cherrylarmstrong@yahoo.com'";
+                "where e.email = 'mrjakc@mail.ru'";
 
-        //create the connection to qa3 env
-       // DBUtils.createConnection();
+        //create the connection to qa3\2 env
+        //DBUtils.createConnection();
         //get the data in java collections
         Map<String, Object> rowMap = DBUtils.getRowMap(query);
         String expectedFullname = (String) rowMap.get("full_name");
@@ -104,7 +104,7 @@ public class ContactsStepDefs {
         System.out.println("expectedFullname = " + expectedFullname);
         System.out.println("expectedEmail = " + expectedEmail);
         //close connection
-       // DBUtils.destroy();
+        //DBUtils.destroy();
 
         //assertion, compare UI vs DATABASE information
         Assert.assertEquals(expectedFullname,actualFullname);
